@@ -11,11 +11,13 @@ BST<std::string> makeTree(const char* filename) {
   while (!file.eof()) {
     std::string word;
     bool flag = true;
-    while(flag) {
+    while (flag) {
       char sym;
       sym = tolower(file.get());
-      if (sym >= 'a' && sym <= 'z') word += sym;
-      else flag = false;
+      if (sym >= 'a' && sym <= 'z')
+        word += sym;
+      else
+        flag = false;
     }
     statistic_tree.add(word);
   }
