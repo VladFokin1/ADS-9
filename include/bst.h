@@ -17,17 +17,18 @@ class BST {
       if (root == nullptr) {
         root = new Node;
         root −> value = value;
-        root −> count =1;
-        root −> left = root−>right = nullptr;
-      } else if (root−>value > value) {
-        root −> left = addNode (root −> left, value);
+        root −> count = 1;
+        root −> left = root −> right = nullptr;
+      } else if (root −> value > value) {
+        root −> left = addNode(root −> left, value);
       } else if (root −> value < value) {
-        root −> right = addNode (root −> right, value);
-      } else
+        root −> right = addNode(root −> right, value);
+      } else {
         root−>count++;
+      }
       return root;
     }
-public :
+ public :
     void add(T value) {
       root = addNode(root, value);
     } 
