@@ -24,14 +24,14 @@ class BST {
       } else if (root −> value < value) {
         root −> right = addNode(root −> right, value);
       } else {
-        root−>count++;
+        root −> count++;
       }
       return root;
     }
  public :
     void add(T value) {
       root = addNode(root, value);
-    } 
+    }
 };
 
 #endif  // INCLUDE_BST_H_
