@@ -8,10 +8,16 @@
 BST<std::string> makeTree(const char* filename) {
   std::ifstream file(filename);
   BST<std::string> statistic_tree;
-  char sym;
   while (!file.eof()) {
-    sym = file.get();
-    sym = tolower(sym);
-    if (sym >= 'a' && sym <= 'z') statistic_tree.add(sym);
+    std::string word;
+    bool flag = true;
+    while(flag) {
+      char sym;
+      sym = tolower(file.get());
+      if (sym >= 'a' && sym <= 'z') word += sym;
+      else flag = false;
+    }
+    statistic_tree.add(word);
   }
+  return statistic_tree;
 }
