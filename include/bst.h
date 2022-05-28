@@ -40,7 +40,7 @@ class BST {
           return R + 1;
       }
     }
-    int searchNode(Node * root, T& val) {
+    int searchNode(Node * root, const T& val) {
       if (root == nullptr)
         return 0;
       else if (root->value == val)
