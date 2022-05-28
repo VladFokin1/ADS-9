@@ -28,9 +28,38 @@ class BST {
       }
       return root;
     }
+    int depthTree(Node * root) {
+      if (root == nullptr) {
+        return 0;
+      } else {
+        int L = depthTree(root->left);
+        int R = depthTree(root->right);
+        if (L > R)
+          return L + 1;
+        else
+          return R + 1;
+      }
+    }
+    int searchNode(Node * root, T& val) {
+      if (root == nullptr)
+        return 0;
+      else if (root->value == val)
+        return root->count;
+      else if (root->value > val)
+        return searchNode(root->left, val);
+      else
+        return searchNode(root->right, val);
+    }
  public :
+    BST(): root(nullptr) {}
     void add(T value) {
       root = addNode(root, value);
+    }
+    int depth() {
+      return depthTree(root) - 1;
+    }
+    int search(const T& value) {
+      return searchNode(root, value);
     }
 };
 
